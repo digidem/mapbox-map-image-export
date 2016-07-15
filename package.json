@@ -1,0 +1,39 @@
+{
+  "name": "mapbox-map-image-export",
+  "version": "1.0.0",
+  "description": "Export a Mapbox GL map to a hi-res image for printing",
+  "main": "index.js",
+  "bin": {
+    "export-map": "./cmd.js"
+  },
+  "license": "MIT",
+  "author": "Gregor MacLennan (Digital Democracy)",
+  "dependencies": {
+    "blob-to-buffer": "^1.2.6",
+    "devtool": "^2.0.3",
+    "geo-viewport": "^0.1.1",
+    "js-quantities": "^1.6.1",
+    "mapbox-gl": "^0.20.1",
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "example": "node ./cmd.js mapbox://styles/mapbox/streets-v9 -w=11in -h=8.5in -b=-7.1354,57.9095,-6.1357,58.516 -t=pk.eyJ1IjoidGF0aWFuYSIsImEiOiJjaWs1bzRiZGQwMDdjcHRrc285bTdwcWU5In0.0EWPVHyjaE9jTzNvOiIO-w -o=lewis.png"
+  },
+  "keywords": [
+    "mapbox",
+    "mapbox-gl",
+    "print",
+    "image",
+    "export",
+    "map"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digidem/mapbox-map-image-export.git"
+  },
+  "bugs": {
+    "url": "https://github.com/digidem/mapbox-map-image-export/issues"
+  },
+  "homepage": "https://github.com/digidem/mapbox-map-image-export#readme"
+}
