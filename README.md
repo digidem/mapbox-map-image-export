@@ -63,6 +63,10 @@ Due to a [bug in mapbox-gl-js][6] trying to export an image that is larger than 
 
 [6]: https://github.com/mapbox/mapbox-gl-js/issues/2863
 
+## Acknowledgements
+
+This is inspired by [extract-streetview](https://github.com/Jam3/extract-streetview) by [mattdesl](https://github.com/mattdesl). It uses [Jam3/devtool](https://github.com/Jam3/devtool) to run [electron](http://electron.atom.io) to render the map in a headless version of Chrome.
+
 ## License
 
 MIT
