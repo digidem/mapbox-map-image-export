@@ -9,14 +9,26 @@
   "license": "MIT",
   "author": "Gregor MacLennan (Digital Democracy)",
   "dependencies": {
-    "blob-to-buffer": "^1.2.6",
-    "devtool": "^2.0.3",
-    "geo-viewport": "^0.1.1",
+    "decimal.js": "^7.1.1",
+    "from2": "^2.3.0",
+    "gl-fbo": "^2.0.5",
+    "gl-pixel-stream": "^1.0.2",
     "js-quantities": "^1.6.1",
-    "mapbox-gl": "^0.20.1",
-    "minimist": "^1.2.0"
+    "mapbox-gl": "^0.31.0",
+    "minimist": "^1.2.0",
+    "mosaic-image-stream": "^1.0.1",
+    "multistream": "^2.1.0",
+    "png-stream": "^1.0.4",
+    "pump": "^1.0.1",
+    "pumpify": "^1.3.5",
+    "through2": "^2.0.1",
+    "through2-spy": "^2.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "devtool": "2.2.0",
+    "request": "^2.74.0",
+    "xhr": "^2.2.2"
+  },
   "scripts": {
     "example": "node ./cmd.js mapbox://styles/mapbox/streets-v9 -w=11in -h=8.5in -b=-7.1354,57.9095,-6.1357,58.516 -t=pk.eyJ1IjoidGF0aWFuYSIsImEiOiJjaWs1bzRiZGQwMDdjcHRrc285bTdwcWU5In0.0EWPVHyjaE9jTzNvOiIO-w -o=lewis.png"
   },
