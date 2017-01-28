@@ -10,6 +10,7 @@
   "author": "Gregor MacLennan (Digital Democracy)",
   "dependencies": {
     "decimal.js": "^7.1.1",
+    "devtool": "2.2.0",
     "from2": "^2.3.0",
     "gl-fbo": "^2.0.5",
     "gl-pixel-stream": "^1.0.2",
@@ -25,7 +26,6 @@
     "through2-spy": "^2.0.0"
   },
   "devDependencies": {
-    "devtool": "2.2.0",
     "request": "^2.74.0",
     "xhr": "^2.2.2"
   },
