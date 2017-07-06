@@ -59,7 +59,7 @@ Mapbox Studio and Mapbox GL maps are designed for the screen, as such 'dpi' (dot
 
 ## Acknowledgements
 
-This is inspired by [extract-streetview](https://github.com/Jam3/extract-streetview) by [mattdesl](https://github.com/mattdesl). It uses [Jam3/devtool](https://github.com/Jam3/devtool) to run [electron](http://electron.atom.io) to render the map in a headless version of Chrome.
+This is inspired by [extract-streetview](https://github.com/Jam3/extract-streetview) by [mattdesl](https://github.com/mattdesl). It uses [Electron](https://electron.atom.io/) to render the map in a headless version of Chrome.
 
 ## License
 
