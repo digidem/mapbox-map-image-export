@@ -1,8 +1,12 @@
 #!/usr/bin/env node
-var path = require('path')
-var file = path.resolve(__dirname, 'index.js')
-var html = path.resolve(__dirname, 'index.html')
+var electron = require('electron')
+var proc = require('child_process')
 
-var args = [ file, '-hq', '--bf', '-c', '-i', html, '--' ]
+var mainProcessScript = require.resolve('./main.js')
 
-require('devtool/bin/spawn')(args.concat(process.argv.slice(2)))
+var args = [mainProcessScript].concat(process.argv.slice(2))
+
+var child = proc.spawn(electron, args, {stdio: 'inherit'})
+child.on('close', function (code) {
+  process.exit(code)
+})

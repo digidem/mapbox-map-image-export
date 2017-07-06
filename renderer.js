@@ -1,22 +1,13 @@
+var remote = require('electron').remote
 var fs = require('fs')
 var path = require('path')
 var pump = require('pump')
+var log = require('single-line-log').stderr
 
 var exportMap = require('./lib/map_mosaic_stream.js')
 
-var argv = require('minimist')(process.argv.slice(2), {
-  alias: {
-    bbox: 'b',
-    width: 'w',
-    height: 'h',
-    dpi: 'd',
-    format: 'f',
-    output: 'o',
-    quality: 'q',
-    token: 't'
-  },
-  string: ['bbox', 'width', 'height', 'format', 'output', 'token']
-})
+window.console = remote.require('./main').console
+var argv = remote.require('./main').argv
 
 var style = argv._[0]
 var format = {}
@@ -31,7 +22,7 @@ var mapStream = exportMap(style, argv)
     var incompleteStr = Array(Math.ceil((1 - percent) * width)).join(' ')
     var str = 'exporting [' + completeStr + '>' + incompleteStr + '] ' + Math.round(percent * 100) + '%'
     last = percent
-    console.log(str)
+    log(str)
   })
   .on('format', function (f) {
     format = f
@@ -39,11 +30,13 @@ var mapStream = exportMap(style, argv)
 pump(mapStream, writeStream, done)
 
 function done (err) {
+  log.clear()
+  log('')
   if (err) {
     process.stderr.write(err.stack + '\n', () => process.exit(1))
   }
   if (argv.output) {
-    console.log('Saved %dpx x %dpx map to %s', format.width, format.height, argv.output)
+    console.error('Saved %dpx x %dpx map to %s', format.width, format.height, argv.output)
   }
   window.close()
 }
