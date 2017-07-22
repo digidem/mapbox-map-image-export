@@ -1,7 +1,5 @@
 # mapbox-map-image-export
 
-> :warning: This tool is experimental. :warning:
-
 A command-line tool to export a [Mapbox vector map][1], such as one created with [Mapbox Studio][2], to a high-resolution image for printing etc.
 
 Mapbox has a [Maps static API][3] for exporting images, but it is limited to `1280px`, and exports as jpeg, with visible compression artifacts. `mapbox-map-image-export` renders the map in a headless browser and exports by default to uncompressed png. You can adjust the dpi setting for high-quality printing. `192dpi` (the default) is good enough for most print applications, but if you want better quality try `288dpi`. Icons will be 192dpi (retina) due to the way sprites are handled by `mapbox-gl-js`.
@@ -14,7 +12,7 @@ The Mapbox [wmts service][4] is another option for creating maps for printing in
 [4]: https://www.mapbox.com/help/mapbox-arcgis-qgis/
 
 ```sh
-export MAPBOX_TOKEN=pk.eyJ1IjoidGF0aWFuYSIsImEiOiJjaWs1bzRiZGQwMDdjcHRrc285bTdwcWU5In0.0EWPVHyjaE9jTzNvOiIO-w
+export MAPBOX_TOKEN=YOUR_MAPBOX_API_PUBLIC_TOKEN
 
 export-map mapbox://styles/mapbox/streets-v9 -w=11in -h=8.5in \
   -b=-7.1354,57.9095,-6.1357,58.516 -t=$MAPBOX_TOKEN -o=lewis.png
@@ -47,6 +45,8 @@ Options:
   --quality, -q     encoding quality for jpg and webp, default 0.9
   --width, -w       output width for printing e.g. 11in or 297mm
   --height, -h      output height for printing
+  --help            show this help
+  --version, -v     show version
 ```
 
 Exports a map for a given mapbox style url for the specified bounding box.

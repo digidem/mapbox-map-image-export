@@ -11,7 +11,8 @@ module.exports.argv = require('minimist')(process.argv.slice(2), {
     format: 'f',
     output: 'o',
     quality: 'q',
-    token: 't'
+    token: 't',
+    version: 'v'
   },
   string: ['bbox', 'width', 'height', 'format', 'output', 'token']
 })

@@ -1,0 +1,18 @@
+Usage:
+  export-map mapboxStyleUrl
+
+Options:
+  --bounds, -b      comma-separated bounding box [required] 'minLon,minLat,maxLon,maxLat' eg. '-7.1354,57.9095,-6.1357,58.516'
+  --token, -t       Mapbox API token [required]: https://www.mapbox.com/studio/account/tokens/
+  --output, -o      image output path, optional, defaults to std.out
+  --dpi, -d         dpi of output image, default 192dpi (equivalent to how the map renders on a retina screen)
+  --format, -f      output format, "jpg", "webp" or "png" (default)
+  --quality, -q     encoding quality for jpg and webp, default 0.9
+  --width, -w       output width for printing e.g. 11in or 297mm
+  --height, -h      output height for printing
+  --help            show this help
+  --version, -v     show version
+
+Exports a map for a given mapbox style url for the specified bounding box.
+
+If no `--output` is given, the PNG is written to stdout.
