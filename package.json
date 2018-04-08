@@ -1,6 +1,6 @@
 {
   "name": "mapbox-map-image-export",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "Export a Mapbox GL map to a hi-res image for printing",
   "main": "index.js",
   "bin": {
