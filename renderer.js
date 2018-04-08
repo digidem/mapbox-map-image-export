@@ -15,7 +15,11 @@ var width = 40
 var last = 0
 
 var writeStream = argv.output ? fs.createWriteStream(abs(argv.output)) : process.stdout
-var mapStream = exportMap(style, argv)
+
+var mapDiv = document.createElement('div')
+document.body.appendChild(mapDiv)
+
+var mapStream = exportMap(style, mapDiv, argv)
   .on('progress', function (percent, total) {
     if ((percent - last) * width < 1) return
     var completeStr = Array(Math.floor(percent * width)).join('=')
