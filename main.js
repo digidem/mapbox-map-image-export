@@ -2,7 +2,7 @@ const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
 
-module.exports.argv = require('minimist')(process.argv.slice(2), {
+module.exports.argv = require('yargs-parser')(process.argv.slice(2), {
   alias: {
     bbox: 'b',
     width: 'w',

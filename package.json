@@ -16,7 +16,6 @@
     "gl-pixel-stream": "^1.2.0",
     "js-quantities": "^1.6.6",
     "mapbox-gl": "^0.44.2",
-    "minimist": "^1.2.0",
     "mosaic-image-stream": "^1.0.1",
     "multistream": "^2.1.0",
     "png-stream": "^1.0.4",
@@ -24,7 +23,8 @@
     "pumpify": "^1.4.0",
     "single-line-log": "^1.1.2",
     "through2": "^2.0.1",
-    "through2-spy": "^2.0.0"
+    "through2-spy": "^2.0.0",
+    "yargs-parser": "^10.0.0"
   },
   "devDependencies": {},
   "scripts": {
