@@ -14,7 +14,10 @@ module.exports.argv = require('yargs-parser')(process.argv.slice(2), {
     token: 't',
     version: 'v'
   },
-  string: ['bbox', 'width', 'height', 'format', 'output', 'token']
+  string: ['bbox', 'width', 'height', 'format', 'output', 'token'],
+  default: {
+    token: process.env.MAPBOX_TOKEN
+  }
 })
 
 module.exports.console = console
