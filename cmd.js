@@ -46,7 +46,13 @@ assert(argv.quality > 0 && argv.quality <= 1, '--quality must be a number betwee
 assert(typeof argv.dpi === 'number', '--dpi must be a number')
 assert(typeof argv.token === 'string', 'Missing --token (must pass a valid Mapbox API token)')
 
-var child = proc.spawn(electron, args, {stdio: 'inherit'})
+console.log('electron', args)
+var child = proc.spawn(electron, args)//, {stdio: 'inherit'})
+child.stdout.pipe(process.stdout)
+child.stderr.pipe(process.stderr)
+child.on('error', function (err) {
+  console.log(err)
+})
 child.on('close', function (code) {
   process.exit(code)
 })

@@ -31,10 +31,12 @@ var mapStream = exportMap(style, mapDiv, argv)
   .on('format', function (f) {
     format = f
   })
+  .on('error', log)
 pump(mapStream, writeStream, done)
 
 function done (err) {
   log.clear()
+  if (err) log('err: ' + err)
   log('')
   if (err) {
     process.stderr.write(err.stack + '\n', () => process.exit(1))
