@@ -12,6 +12,7 @@ Options:
   --height, -h      output height for printing
   --help            show this help
   --version, -v     show version
+  --debug           renders bounding box and (print) tile boundaries and opens the developer tools console
 
 Exports a map for a given mapbox style url for the specified bounding box.
 

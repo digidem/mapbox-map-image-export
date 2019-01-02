@@ -9,6 +9,7 @@
   "license": "MIT",
   "author": "Gregor MacLennan (Digital Democracy)",
   "dependencies": {
+    "@turf/bbox-polygon": "^6.0.1",
     "decimal.js": "^10.0.1",
     "electron": "^3.0.7",
     "from2": "^2.3.0",

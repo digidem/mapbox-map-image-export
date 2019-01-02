@@ -2,7 +2,7 @@ const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const url = require('url')
 
-module.exports.argv = require('yargs-parser')(process.argv.slice(2), {
+const argv = module.exports.argv = require('yargs-parser')(process.argv.slice(2), {
   alias: {
     bbox: 'b',
     width: 'w',
@@ -14,6 +14,7 @@ module.exports.argv = require('yargs-parser')(process.argv.slice(2), {
     token: 't',
     version: 'v'
   },
+  boolean: ['debug'],
   string: ['bbox', 'width', 'height', 'format', 'output', 'token'],
   default: {
     token: process.env.MAPBOX_TOKEN
@@ -28,7 +29,8 @@ let win
 
 function createWindow () {
   // Create the browser window.
-  win = new BrowserWindow({ show: false })
+  win = new BrowserWindow({ show: !!argv.debug })
+  if (argv.debug) win.webContents.openDevTools()
   // win.webContents.openDevTools()
   // and load the index.html of the app.
   win.loadURL(url.format({
