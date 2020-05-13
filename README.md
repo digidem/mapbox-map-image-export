@@ -20,6 +20,14 @@ export-map mapbox://styles/mapbox/streets-v9 -w=11in -h=8.5in \
 
 ![lewis](lewis.png)
 
+## Terms of Use
+
+If you use this tool to export images from maps which include data from Mapbox, then you must follow the [Mapbox terms of service](https://www.mapbox.com/tos/):
+
+- Exported images must only be used for non-commercial, non-profit or educational use.
+- You must add attribution and the [Mapbox logo](https://www.mapbox.com/about/press/brand-guidelines/) to the printed map according to the Mapbox [attribution guidelines for static print](https://docs.mapbox.com/help/how-mapbox-works/attribution/#static--print).
+- To secure permission to print images of a Mapbox style for a commercial project, please [contact Mapbox](https://www.mapbox.com/contact/sales/).
+
 ## Install
 
 This tool uses Electron to render the map using [mapbox-gl-js][3], so it is fairly heavy (~100mb). Install with latest [npm](https://www.npmjs.com/).
